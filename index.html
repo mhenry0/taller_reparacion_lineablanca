@@ -11,7 +11,7 @@
         
         <!-- Meta Keywords -->
         <meta name="keywords" content="reparación de lavadoras, mantenimiento de lavadoras, venta de lavadoras, expertos en lavadoras, servicio técnico, lavadoras Costa Rica, servicio rápido y confiable, lavadoras a domicilio">
-        
+        <link rel="stylesheet" src="styles/style.css">
         <!-- CSS Files -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -72,7 +72,109 @@ html {
     color: white; /* Adjust text color for readability */
 }
 
+    .experience-counter, .satisfied-counter {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 10px;
+    }
+
+    .experience-counter span, .satisfied-counter span {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #f8c200; /* Yellow color */
+    }
+
+    .experience-counter p, .satisfied-counter p {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        color: #555;
+    }
+
+    /* Animation */
+    @keyframes countUp {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+   /* Estilos para el botón flotante */
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px; /* Espacio desde la parte inferior */
+    right: 20px;  /* Espacio desde la parte derecha */
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white;
+    border-radius: 50%; /* Hace el botón completamente redondo */
+    padding: 15px; /* Espaciado dentro del botón (ajústalo según sea necesario) */
+    width: 60px;  /* Ancho fijo para el botón */
+    height: 60px; /* Altura fija para el botón (debe ser igual al ancho para hacerlo circular) */
+    display: flex;
+    align-items: center; /* Centra el icono verticalmente */
+    justify-content: center; /* Centra el icono horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 30px; /* Tamaño del icono de WhatsApp */
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover para hacer más interactivo el botón */
+.whatsapp-button:hover {
+    transform: scale(1.1); /* Hace que el botón se agrande un poco al pasar el mouse */
+}
+
+
+        /* Icono de WhatsApp */
+        .whatsapp-button i {
+            margin: 0;
+        }
     </style>
+
+<script>
+    // Counter for Years of Experience
+    function updateExperienceCounter() {
+        const countElement = document.getElementById('experienceCount');
+        let count = 0;
+        const target = 10; // Final number for this counter
+        const increment = 100; // Interval in milliseconds
+
+        function incrementCounter() {
+            if (count < target) {
+                count++;
+                countElement.innerText = `+${count}`;
+                setTimeout(incrementCounter, increment);
+            }
+        }
+
+        incrementCounter();
+    }
+
+    // Counter for Satisfied Clients
+    function updateClientsCounter() {
+        const countElement = document.getElementById('clientsCount');
+        let count = 0;
+        const target = 150; // Final number for this counter
+        const increment = 10; // Interval in milliseconds
+
+        function incrementCounter() {
+            if (count < target) {
+                count++;
+                countElement.innerText = `+${count}`;
+                setTimeout(incrementCounter, increment);
+            }
+        }
+
+        incrementCounter();
+    }
+
+    // Initialize both counters
+    window.onload = () => {
+        updateExperienceCounter();
+        updateClientsCounter();
+    };
+</script>
 </head>
 <body>
 
@@ -136,79 +238,7 @@ html {
     <p>Clientes Satisfechos</p>
 </div>
 
-<style>
-    .experience-counter, .satisfied-counter {
-        text-align: center;
-        font-family: Arial, sans-serif;
-        margin-top: 10px;
-    }
 
-    .experience-counter span, .satisfied-counter span {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #f8c200; /* Yellow color */
-    }
-
-    .experience-counter p, .satisfied-counter p {
-        font-size: 1.5rem;
-        margin-top: 5px;
-        color: #555;
-    }
-
-    /* Animation */
-    @keyframes countUp {
-        0% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(1.1);
-        }
-    }
-</style>
-
-<script>
-    // Counter for Years of Experience
-    function updateExperienceCounter() {
-        const countElement = document.getElementById('experienceCount');
-        let count = 0;
-        const target = 10; // Final number for this counter
-        const increment = 100; // Interval in milliseconds
-
-        function incrementCounter() {
-            if (count < target) {
-                count++;
-                countElement.innerText = `+${count}`;
-                setTimeout(incrementCounter, increment);
-            }
-        }
-
-        incrementCounter();
-    }
-
-    // Counter for Satisfied Clients
-    function updateClientsCounter() {
-        const countElement = document.getElementById('clientsCount');
-        let count = 0;
-        const target = 150; // Final number for this counter
-        const increment = 10; // Interval in milliseconds
-
-        function incrementCounter() {
-            if (count < target) {
-                count++;
-                countElement.innerText = `+${count}`;
-                setTimeout(incrementCounter, increment);
-            }
-        }
-
-        incrementCounter();
-    }
-
-    // Initialize both counters
-    window.onload = () => {
-        updateExperienceCounter();
-        updateClientsCounter();
-    };
-</script>
 
 
 <!-- Sección Nuestros Servicios -->
@@ -277,6 +307,50 @@ html {
     </div>
 </section>
 
+
+<!-- Sección Productos en Venta -->
+<section id="productos" class="container py-5">
+    <h2 class="text-center mb-4">Productos en Venta</h2>
+    <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/lavadora.webp" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                    <h5 class="card-title">Producto 1</h5>
+                    <p class="card-text">Descripción breve del producto 1. Es ideal para uso doméstico y tiene excelentes características.</p>
+                    <p class="text-muted">$49.99</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/lavadora.webp" class="card-img-top" alt="Producto 2">
+                <div class="card-body">
+                    <h5 class="card-title">Producto 2</h5>
+                    <p class="card-text">Descripción breve del producto 2. Perfecto para mejorar la eficiencia en tu hogar o negocio.</p>
+                    <p class="text-muted">$79.99</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/lavadora.webp" class="card-img-top" alt="Producto 3">
+                <div class="card-body">
+                    <h5 class="card-title">Producto 3</h5>
+                    <p class="card-text">Descripción breve del producto 3. Un artículo imprescindible para quienes buscan calidad y durabilidad.</p>
+                    <p class="text-muted">$99.99</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Sección Mapa -->
 <section id="map" class="py-5">
     <div class="container">
@@ -291,47 +365,65 @@ html {
 <section id="contact" class="py-5 bg-white text-center">
     <div class="container">
         <p style="font-size: 22px;"><b>Envíanos un Mensaje</b></p>
-        <p>Si tienes alguna pregunta o necesitas ayuda con tu lavadora, no dudes en contactarnos por WhatsApp o enviarnos un mensaje.</p>
+        <p>Si tienes alguna pregunta o necesitas ayuda con tu lavadora, no dudes en contactarnos vía WhatsApp.</p>
         <a href="https://wa.me/123456789" class="btn btn-warning" target="_blank">Click Aqui</a>
     </div>
 </section>
 
-<!-- Pie de Página -->
-<!-- Pie de Página -->
-<footer class="bg-black text-white py-5">
+<!-- Botón Flotante de WhatsApp -->
+<a href="https://wa.me/1234567890?text=¡Hola,%20tengo%20una%20consulta!" target="_blank">
+    <div class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> <!-- Este es el icono de WhatsApp -->
+    </div>
+</a>
+
+<!-- Incluir Font Awesome para el icono de WhatsApp -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<footer class="bg-dark text-light py-5">
     <div class="container">
         <div class="row">
-            <!-- Columna de Información de la Empresa -->
-            <div class="col-md-4 mb-3">
-                <h5>Expertos en Lavadoras</h5>
-                <p>Tu socio de confianza para la reparación, venta y mantenimiento de lavadoras. Estamos comprometidos en ofrecer servicios de alta calidad a precios accesibles.</p>
+            <!-- Empresa Information -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-3 font-weight-bold">Expertos en Lavadoras</h5>
+                <p class="mb-2">Tu socio de confianza para la reparación, venta y mantenimiento de lavadoras. Estamos comprometidos en ofrecer servicios de alta calidad a precios accesibles.</p>
             </div>
-            <!-- Columna de Enlaces Rápidos -->
-            <div class="col-md-4 mb-3">
-                <h5>Enlaces Rápidos</h5>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-3 font-weight-bold">Enlaces Rápidos</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#services" class="text-white">Nuestros Servicios</a></li>
-                    <li><a href="#about" class="text-white">Sobre Nosotros</a></li>
-                    <li><a href="#contact" class="text-white">Contáctanos</a></li>
+                    <li><a href="#services" class="text-light text-decoration-none">Nuestros Servicios</a></li>
+                    <li><a href="#about" class="text-light text-decoration-none">Sobre Nosotros</a></li>
+                    <li><a href="#contact" class="text-light text-decoration-none">Contáctanos</a></li>
                 </ul>
             </div>
-            <!-- Columna de Información de Contacto -->
-            <div class="col-md-4 mb-3">
-                <h5>Contáctanos</h5>
-                <p>Correo Electrónico: <a href="mailto:info@washingmachineexperts.com" class="text-white" style="text-decoration: none;">info@washingmachineexperts.com</a></p>
-                <p>Teléfono: <a href="tel:+123456789" class="text-white"  style="text-decoration: none;">+1 234 567 89</a></p>
-               
-            </div>
-            <div class="text-center">
-                <img src="/logoblack.svg">
+
+            <!-- Contact Information -->
+            <div class="col-md-4">
+                <h5 class="text-uppercase mb-3 font-weight-bold">Contáctanos</h5>
+                <p class="mb-2">Correo Electrónico: <a href="mailto:info@washingmachineexperts.com" class="text-light text-decoration-none">info@washingmachineexperts.com</a></p>
+                <p class="mb-2">Teléfono: <a href="tel:+123456789" class="text-light text-decoration-none">+1 234 567 89</a></p>
             </div>
         </div>
-        <hr class="bg-white">
+
+        <!-- Logo Section -->
+        <div class="text-center my-4">
+            <img src="/whitebg.svg" alt="Nativa Innovations Logo" class="img-fluid" style="max-width: 200px;">
+        </div>
+
+        <!-- Horizontal Line -->
+        <hr class="bg-light">
+
+        <!-- Footer Bottom -->
         <div class="text-center">
-            <p>&copy; 2025 Nativa Innovations. Todos los Derechos Reservados.</p>
-        </div>
+            <p class="mb-0">
+                &copy; 2025 <a href="https://www.nativainnovations.com" class="text-light text-decoration-none" target="_blank" rel="noopener noreferrer">Nativa Innovations</a>. Todos los Derechos Reservados.
+            </p>
+                    </div>
     </div>
 </footer>
+
 
 <!-- Bootstrap JS and Font Awesome -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
