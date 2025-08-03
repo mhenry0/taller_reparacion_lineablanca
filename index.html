@@ -179,43 +179,51 @@ html {
 </script>
 </head>
 <body>
-
 <!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-white bg-white sticky-top" style="font-size: 25px;">
-    <div class="container">
-        <img src="./logo2.png" style="width: 100px; height: 100px;">
-        <a class="navbar-brand" href="#" style="font-size: 25px; color: #000;">Expertos en Lavadoras</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#services" style="color: #000;">Nuestros Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact" style="color: #000;">Contáctanos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about" style="color: #000;">Sobre Nosotros</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+  <div class="container align-items-center">
+    <!-- Logo y nombre -->
+    <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+      <img src="./logo2.png" alt="Logo" style="height: 60px; width: auto;">
+      <span class="fw-bold fs-4 text-dark">Expertos en Lavadoras</span>
+    </a>
+
+    <!-- Botón hamburguesa móvil -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Enlaces de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fs-5">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#services">Nuestros Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#contact">Contáctanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#about">Sobre Nosotros</a>
+        </li>
+      </ul>
     </div>
+  </div>
 </nav>
 
 
 
 <!-- Sección Hero -->
-<section class="hero-section text-center">
-    <div class="hero-parallax">
-        <div class="container">
-            <h1>Reparación y Venta de Lavadoras</h1>
-            <p>¡Brindamos servicios rápidos, confiables y accesibles para todas tus necesidades de lavadoras!</p>
-            <a href="#contact" class="btn btn-warning btn-lg" style="font-size: 20px;">Contactanos Ahora</a>
-        </div>
-    </div>
+<section class="hero-section text-center d-flex align-items-center justify-content-center bg-light position-relative" style="min-height: 100vh; background-image: url('./parallax.jpeg'); background-size: cover; background-position: center;">
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+  
+  <div class="container position-relative text-white py-5">
+    <h1 class="display-4 fw-bold mb-3">Reparación y Venta de Lavadoras</h1>
+    <p class="lead mb-4">Servicios rápidos, confiables y accesibles para todas tus necesidades de lavado.</p>
+    <a href="#contact" class="btn btn-warning btn-lg px-4 shadow-sm">Contáctanos Ahora</a>
+  </div>
 </section>
+
 
 
 <!-- Sección Sobre Nosotros -->
@@ -382,7 +390,7 @@ html {
 <!-- Incluir Font Awesome para el icono de WhatsApp -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<footer class="bg-dark text-light py-5">
+<footer class="text-light py-5" style="background-color: #e28515;">
     <div class="container">
         <div class="row">
             <!-- Empresa Information -->
